@@ -1,0 +1,219 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Rubik";
+    --font-body: "Rubik";
+    --font-mono: "Geist Mono";
+    --radius: 0.75rem;
+
+    --background: 0.99 0 0;
+    --foreground: 0.15 0 0;
+    --card: 1.0 0 0;
+    --card-foreground: 0.15 0 0;
+    --popover: 1.0 0 0;
+    --popover-foreground: 0.15 0 0;
+
+    --primary: 0.72 0.14 193;
+    --primary-foreground: 0.08 0.02 260;
+
+    --secondary: 0.95 0 0;
+    --secondary-foreground: 0.25 0 0;
+    --muted: 0.95 0 0;
+    --muted-foreground: 0.5 0 0;
+
+    --accent: 0.35 0.22 270;
+    --accent-foreground: 0.98 0 0;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0 0;
+
+    --border: 0.9 0 0;
+    --input: 0.9 0 0;
+    --ring: 0.72 0.14 193;
+
+    --chart-1: 0.72 0.14 193;
+    --chart-2: 0.6 0.12 185;
+    --chart-3: 0.4 0.07 227;
+    --chart-4: 0.83 0.19 84;
+    --chart-5: 0.77 0.19 70;
+
+    --sidebar: 0.98 0 0;
+    --sidebar-foreground: 0.15 0 0;
+    --sidebar-primary: 0.72 0.14 193;
+    --sidebar-primary-foreground: 0.08 0.02 260;
+    --sidebar-accent: 0.95 0 0;
+    --sidebar-accent-foreground: 0.25 0 0;
+    --sidebar-border: 0.9 0 0;
+    --sidebar-ring: 0.72 0.14 193;
+  }
+
+  .dark {
+    --background: 0.13 0.018 265;
+    --foreground: 0.96 0.005 260;
+    --card: 0.17 0.02 265;
+    --card-foreground: 0.96 0.005 260;
+    --popover: 0.2 0.02 265;
+    --popover-foreground: 0.96 0.005 260;
+
+    --primary: 0.72 0.14 193;
+    --primary-foreground: 0.08 0.02 260;
+
+    --secondary: 0.22 0.022 265;
+    --secondary-foreground: 0.85 0.008 260;
+    --muted: 0.22 0.022 265;
+    --muted-foreground: 0.54 0.012 260;
+
+    --accent: 0.4 0.2 272;
+    --accent-foreground: 0.96 0.005 260;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.96 0.005 25;
+
+    --border: 0.27 0.022 265;
+    --input: 0.27 0.022 265;
+    --ring: 0.72 0.14 193;
+
+    --chart-1: 0.72 0.14 193;
+    --chart-2: 0.7 0.17 162;
+    --chart-3: 0.77 0.19 70;
+    --chart-4: 0.63 0.27 304;
+    --chart-5: 0.65 0.25 16;
+
+    --sidebar: 0.17 0.02 265;
+    --sidebar-foreground: 0.96 0.005 260;
+    --sidebar-primary: 0.72 0.14 193;
+    --sidebar-primary-foreground: 0.08 0.02 260;
+    --sidebar-accent: 0.22 0.022 265;
+    --sidebar-accent-foreground: 0.85 0.008 260;
+    --sidebar-border: 0.27 0.022 265;
+    --sidebar-ring: 0.72 0.14 193;
+  }
+
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Rubik", sans-serif;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .text-hero {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight;
+    font-family: "Rubik", sans-serif;
+    font-weight: 800;
+  }
+
+  .text-section-title {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight;
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+  }
+
+  .text-label {
+    @apply text-xs font-semibold tracking-widest uppercase;
+    font-family: "Rubik", sans-serif;
+  }
+
+  .card-elevated {
+    @apply bg-card rounded-xl border border-border shadow-md transition-smooth hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold transition-smooth hover:opacity-90 active:scale-95 cursor-pointer;
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-primary text-primary rounded-lg font-semibold transition-smooth hover:bg-primary hover:text-primary-foreground active:scale-95 cursor-pointer;
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-accent text-accent-foreground rounded-lg font-semibold transition-smooth hover:opacity-90 active:scale-95 cursor-pointer;
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.6s ease-out both;
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.7s ease-out both;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px oklch(var(--primary) / 0.35);
+  }
+
+  .section-divider {
+    @apply border-t border-border;
+  }
+
+  .text-gradient-cyan {
+    background: linear-gradient(
+      135deg,
+      oklch(0.72 0.14 193),
+      oklch(0.8 0.12 185)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .navbar-blur {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.25s ease-out both;
+}

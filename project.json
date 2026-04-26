@@ -1,0 +1,23 @@
+{
+  "overview": "Car-e-Ghar is a modern, dark-themed business website for a car wash and detailing service in Secunderabad. It showcases all services with dedicated detail pages, customer reviews, and a contact section with click-to-call functionality.",
+  "features": [
+    "Hero section with rating badge and CTAs",
+    "7 service cards with individual detail pages",
+    "Empty image placeholders per service",
+    "Customer reviews section",
+    "Click-to-call contact section",
+    "Sticky responsive navbar",
+    "Smooth scroll animations",
+    "Dark theme with Rubik font"
+  ],
+  "category": "business",
+  "tags": [
+    "car-wash",
+    "detailing",
+    "business-website",
+    "dark-theme",
+    "responsive",
+    "secunderabad"
+  ],
+  "last_updated": "2026-04-26T16:31:52.665Z"
+}
