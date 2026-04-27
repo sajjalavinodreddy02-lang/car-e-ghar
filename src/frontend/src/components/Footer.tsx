@@ -1,12 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { Car, ExternalLink, MapPin, Phone } from "lucide-react";
+import { Car, MapPin, Phone } from "lucide-react";
 import { SERVICES } from "../data/services";
 
 export function Footer() {
   const year = new Date().getFullYear();
-  const hostname =
-    typeof window !== "undefined" ? window.location.hostname : "";
-  const caffeineUrl = `https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(hostname)}`;
 
   const handleHashLink = (id: string) => {
     const el = document.getElementById(id);
@@ -52,7 +49,6 @@ export function Footer() {
                     to="/services/$serviceId"
                     params={{ serviceId: s.id }}
                     className="text-sm text-muted-foreground hover:text-primary transition-smooth"
-                    data-ocid={`footer.service_link.${SERVICES.indexOf(s) + 1}`}
                   >
                     {s.title}
                   </Link>
@@ -96,7 +92,6 @@ export function Footer() {
                 <a
                   href="tel:+918977041344"
                   className="flex items-start gap-2 text-sm text-muted-foreground hover:text-primary transition-smooth"
-                  data-ocid="footer.call_link"
                 >
                   <Phone
                     className="w-4 h-4 mt-0.5 shrink-0 text-primary"
@@ -111,7 +106,6 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-2 text-sm text-muted-foreground hover:text-primary transition-smooth"
-                  data-ocid="footer.directions_link"
                 >
                   <MapPin
                     className="w-4 h-4 mt-0.5 shrink-0 text-primary"
@@ -124,18 +118,9 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Bottom Bar */}
         <div className="mt-10 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground">
-          <span>
-            © {year}. Built with love using{" "}
-            <a
-              href={caffeineUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-primary transition-smooth inline-flex items-center gap-1"
-            >
-              caffeine.ai <ExternalLink className="w-3 h-3" />
-            </a>
-          </span>
+          <span>© {year} Car-e-Ghar. All rights reserved.</span>
           <span>Car-e-Ghar · Secunderabad, Telangana</span>
         </div>
       </div>
